@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSI Domains</title>
+  <link rel="stylesheet" href="./csi_pro_domain.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="./csi_pro.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-logo">CSI Club</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="csi_pro_about.html">About</a></li>
+      <li><a href="./csi_pro_domain.html" class="active">Domain</a></li>
+      <li><a href="./csi_pro_event.html">Events</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- Domains Section -->
+  <section class="domain-section">
+    <h1 class="section-title">Our Domains</h1>
+    <p class="section-subtitle">Explore the areas where our CSI club excels and innovates.</p>
+    <div class="domain-grid">
+
+     <div class="timeline">
+  <div class="timeline-card left">
+    <div class="content">
+      <img src="./web-icon.png" class="domain-icon" alt="Web Icon" />
+      <h3>Web Development</h3>
+      <p>Build responsive, modern web apps using HTML, CSS, JavaScript, and frameworks.</p>
+    </div>
+  </div>
+
+  <div class="timeline-card right">
+    <div class="content">
+      <img src="./app-icon.png" class="domain-icon" alt="App Icon" />
+      <h3>App Development</h3>
+      <p>Create seamless mobile applications with intuitive UI and efficient code.</p>
+    </div>
+  </div>
+
+  <div class="timeline-card left">
+    <div class="content">
+      <img src="./ai-icon.png" class="domain-icon" alt="AI Icon" />
+      <h3>Artificial Intelligence</h3>
+      <p>Explore machine learning, neural networks, and cutting-edge AI technologies.</p>
+    </div>
+  </div>
+
+  <div class="timeline-card right">
+    <div class="content">
+      <img src="./data-icon.png" class="domain-icon" alt="Data Icon" />
+      <h3>Data Science</h3>
+      <p>Analyze and visualize data to uncover insights and drive decision-making.</p>
+    </div>
+  </div>
+
+  <div class="timeline-card left">
+    <div class="content">
+      <img src="./cybersecurity-icon.png" class="domain-icon" alt="Cybersecurity Icon" />
+      <h3>Cybersecurity</h3>
+      <p>Understand ethical hacking, penetration testing, and data security.</p>
+    </div>
+  </div>
+
+  <div class="timeline-card right">
+    <div class="content">
+      <img src="./cloud-icon.png" class="domain-icon" alt="Cloud Icon" />
+      <h3>Cloud Computing</h3>
+      <p>Deploy and manage scalable services using AWS, Azure, and Google Cloud.</p>
+    </div>
+  </div>
+</div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".timeline-card");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            entry.target.style.transitionDelay = `${index * 0.2}s`;
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
+<footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="csi_pro_about.html">About</a></li>
+          <li><a href="csi_pro_domain.html">Domain</a></li>
+          <li><a href="./csi_pro_event.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-envelope"></i> pictcsi@club.com</a></li>
+          <li><a href="#"><i class="fa fa-phone"></i> +91-XXXXXXXXXX</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 CSI PICT. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSI Team</title>
+  <link rel="stylesheet" href="./csi_pro.css" />
+  <link rel="stylesheet" href="./csi_pro_team.css ">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Navbar (Same as index.html) -->
+  <nav class="navbar">
+    <div class="nav-logo">CSI Club</div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./csi_pro_about.html">About</a></li>
+      <li><a href="./csi_pro_domain.html">Domain</a></li>
+      <li><a href="./csi_pro_event.html">Events</a></li>
+      <li><a class="active" href="./csi_pro_team.html">Team</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- Team Section -->
+  <section id="team" class="team-section" style="padding-top: 140px;">
+  <div class="team-header">
+    <h1>Meet Our Team</h1>
+    <p class="tagline">Innovators. Leaders. Collaborators.</p>
+  </div>
+  
+  <div class="hero-details">
+    <!-- Team Member 1 -->
+    <div class="card-wrapper">
+      <div class="detail-box">
+        <img src="./presedent.jpg" alt="President" class="team-img" />
+        <h3>Adnan Patel</h3>
+        <p class="role">President</p>
+        <button class="toggle-btn">More Info</button>
+        <div class="more-info">
+          <p>Oversees club operations and ensures seamless event execution. Passionate about community building and AI.</p>
+          <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADtGkhgB-HpRNDCSnufmMbQ7L3MMI_x3vGc&keywords=adnan%20patel&origin=RICH_QUERY_SUGGESTION&position=0&searchId=f8528106-5265-49e5-9490-0a23d345c8a3&sid=5_a&spellCorrectionEnabled=false" target="_blank" class="linkedin-btn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="card-wrapper">
+      <div class="detail-box">
+        <img src="./vice.jpg" alt="Vice President" class="team-img" />
+        <h3>Naman Labhsetwar</h3>
+        <p class="role">Vice President</p>
+        <button class="toggle-btn">More Info</button>
+        <div class="more-info">
+          <p>Supports strategic initiatives and mentoring programs. Strong advocate for women in tech.</p>
+          <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADldDBIBm1f94Ds6mjS3q6tzNJuGLKN9dyQ&keywords=naman%20labhsetwar&origin=RICH_QUERY_SUGGESTION&position=2&searchId=4e49aa52-438a-43ab-a3e0-4cbcb125635b&sid=H*%40&spellCorrectionEnabled=false" target="_blank" class="linkedin-btn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more team members here -->
+  </div>
+</section>
+
+  <!-- Footer (Same structure as index.html) -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p>Email: pictcsi@example.com</p>
+        <p>Phone: +91 9876543210</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="csi_pro_about.html">About</a></li>
+          <li><a href="csi_pro_domain.html">Domain</a></li>
+          <li><a href="./csi_pro_event.html">Events</a></li>
+          <li><a href="./csi_pro_team.html">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PICT CSI Student Branch. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS for card tilt and dropdown -->
+  <script>
+    document.querySelectorAll('.card-wrapper').forEach(wrapper => {
+      const card = wrapper.querySelector('.detail-box');
+      wrapper.addEventListener('mousemove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * -10;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        card.style.setProperty('--shine-x', `${(x / rect.width) * 100}%`);
+        card.style.setProperty('--shine-y', `${(y / rect.height) * 100}%`);
+        card.style.setProperty('--shine-opacity', '1');
+      });
+      wrapper.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotate(0) rotate(0) scale(1)';
+        card.style.setProperty('--shine-opacity', '0');
+      });
+    });
+
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const info = button.nextElementSibling;
+    const isVisible = info.style.display === 'block';
+    
+    // Animate display
+    info.style.display = isVisible ? 'none' : 'block';
+    if (!isVisible) {
+      info.style.animation = 'slideDown 0.4s ease forwards';
+    }
+  });
+});
+
+  </script>
+
+  <script src="csi_pro.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a2a3a);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(15, 32, 39, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #00bfff;
+}
+
+.team-section {
+  padding-top: 140px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.team-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: #d1d1d1;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card-wrapper {
+  perspective: 1200px;
+}
+
+.detail-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background-color 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-box:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.team-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.role {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 5px 0 15px;
+}
+
+.toggle-btn {
+  background-color: #00bfff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #009acc;
+}
+
+.more-info {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  display: none;
+  text-align: left;
+}
+
+.linkedin-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #0077b5;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+  background-color: #005f8d;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+/* Uniform card height */
+.detail-box {
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.4s ease;
+  animation: fadeIn 0.8s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bounce on hover */
+.detail-box:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* LinkedIn button styling */
+.linkedin-btn {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #0077b5;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.linkedin-btn:hover {
+  background-color: #005f8d;
+  transform: scale(1.05);
+}
+
+.linkedin-btn i {
+  font-size: 1.2rem;
+}
+
+/* Image style */
+.team-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* More Info Animation */
+.more-info {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  text-align: left;
+  animation: slideDown 0.4s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure all cards match size */
+.card-wrapper {
+  width: 300px;
+}

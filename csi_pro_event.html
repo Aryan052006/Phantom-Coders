@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSI PICT Events</title>
+  <link rel="stylesheet" href="csi_pro_event.css">
+  <link rel="stylesheet" href="./csi_pro.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body>
+   <nav class="navbar">
+    <div class="nav-logo">CSI Club</div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./csi_pro_about.html">About</a></li>
+      <li><a href="./csi_pro_domain.html">Domain</a></li>
+      <li><a href="./csi_pro_event.html">Events</a></li>
+      <li><a href="./csi_pro_team.html">Team</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>CSI PICT Events</h1>
+  </header>
+
+  <main>
+  <!-- Upcoming Events -->
+  <section class="event-section">
+    <h2>Upcoming Events</h2>
+    <div class="hero-details">
+      <div class="event-wrapper">
+        <div class="event-card" onclick="togglePanel('fe-details')">
+          <img src="fecarnival.jpg" alt="FE Carnival" />
+          <h3>FE Carnival</h3>
+          <p>Welcome event for first-year freshers.</p>
+        </div>
+        <div class="side-panel" id="fe-details">
+          <h3>FE Carnival</h3>
+          <p>Welcome event for first-year freshers.</p>
+          <ul>
+            <li>Orientation Session</li>
+            <li>Ice-breaking Games</li>
+            <li>Campus Tour</li>
+          </ul>
+          <div class="popup-images">
+            <img src="fecarnival1.jpg" alt="FE Event 1" />
+            <img src="fecarnival2.jpg" alt="FE Event 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ongoing Events -->
+  <section class="event-section">
+    <h2>Ongoing Events</h2>
+    <div class="hero-details">
+      <div class="event-wrapper">
+        <div class="event-card" onclick="togglePanel('hack-details')">
+          <img src="hackthon.jpg" alt="Hackathon" />
+          <h3>Hackathon</h3>
+          <p>24-hour coding challenge.</p>
+        </div>
+        <div class="side-panel" id="hack-details">
+          <h3>Hackathon</h3>
+          <p>24-hour coding challenge.</p>
+          <ul>
+            <li>Problem Statement Release</li>
+            <li>Team Coding</li>
+            <li>Mentorship Sessions</li>
+          </ul>
+          <!-- <div class="popup-images">
+            <img src="hack1.jpg" alt="Hackathon 1" />
+            <img src="hack2.jpg" alt="Hackathon 2" />
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Events -->
+  <section class="event-section">
+    <h2>Previous Events</h2>
+    <div class="hero-details">
+      <div class="event-wrapper">
+        <div class="event-card" onclick="togglePanel('xenia-details')">
+          <img src="xenia.jpg" alt="XENIA" />
+          <h3>XENIA</h3>
+          <p>Flagship event of CSI PICT.</p>
+        </div>
+        <div class="side-panel" id="xenia-details">
+          <h3>XENIA</h3>
+          <p>Flagship event of CSI PICT.</p>
+          <ul>
+            <li>Tech Talks</li>
+            <li>Workshops</li>
+            <li>Project Exhibitions</li>
+          </ul>
+          <div class="popup-images">
+            <img src="xenia1.jpg" alt="XENIA 1" />
+            <img src="xenia2.jpg" alt="XENIA 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  function togglePanel(id) {
+    const panel = document.getElementById(id);
+    const isOpen = panel.classList.contains('active');
+
+    // Close all panels first
+    document.querySelectorAll('.side-panel').forEach(p => p.classList.remove('active'));
+
+    // Toggle current
+    if (!isOpen) {
+      panel.classList.add('active');
+    }
+  }
+</script>
+
+
+ <!-- Full Featured Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="csi_pro_about.html">About</a></li>
+          <li><a href="csi_pro_domain.html">Domain</a></li>
+          <li><a href="./csi_pro_event.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-envelope"></i> pictcsi@club.com</a></li>
+          <li><a href="#"><i class="fa fa-phone"></i> +91-XXXXXXXXXX</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 CSI PICT. All rights reserved.
+    </div>
+  </footer>
+
+
+  <script src="csi_pro.js"></script>
+</body>
+</html>
